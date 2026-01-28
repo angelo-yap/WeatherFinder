@@ -1,0 +1,65 @@
+:root{
+  background-color: rgb(108, 212, 235);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+  border: 3px solid rgb(152, 217, 220);    
+  background-color: rgb(164, 240, 243);      
+  padding: 20px;
+}
+
+h1{ 
+  text-align: center;
+}
+
+main{ 
+  display: flex;
+  border: 3px solid rgb(152, 217, 220);    
+  background-color: rgb(164, 240, 243);      
+  justify-content: space-between;
+}
+
+.weather-zone{  
+  border: 3px solid rgb(152, 217, 220);
+  background-color: rgb(164, 240, 243);      
+  border-radius: 0 10px 10px 0;
+}
+
+.container{ 
+  border: 3px solid rgb(152, 217, 220);
+  background-color: rgb(164, 240, 243);      
+  padding: 20px;
+}
+
+.weather-display{ 
+  border: 3px solid rgb(152, 217, 220);    
+  background-color: rgb(164, 240, 243);      
+  padding: 30px;
+}
+
+.sidebar{
+  font-size: larger;
+  border: 3px solid rgb(152, 217, 220);    
+  background-color: rgb(164, 240, 243);      
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-box{
+  display: flex;
+}
+
+.search-box input{
+  font-size: medium;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-box button{
+  font-size: medium;
+  border: 1px solid;
+  border-radius: 0 10px 10px 0;
+  background-color: aliceblue;
+}
