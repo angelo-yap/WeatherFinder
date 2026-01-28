@@ -23,36 +23,37 @@ main{
 .weather-zone{  
   border: 3px solid rgb(152, 217, 220);
   background-color: rgb(164, 240, 243);      
-  border-radius: 0 10px 10px 0;
+  width: 90%;
 }
 
 .container{ 
-  border: 3px solid rgb(152, 217, 220);
   background-color: rgb(164, 240, 243);      
   padding: 20px;
 }
 
 .weather-display{ 
-  border: 3px solid rgb(152, 217, 220);    
   background-color: rgb(164, 240, 243);      
   padding: 30px;
+  text-align: center;
 }
 
 .sidebar{
   font-size: larger;
   border: 3px solid rgb(152, 217, 220);    
   background-color: rgb(164, 240, 243);      
-  padding: 20px;
-  border-radius: 10px 0 0 10px;
+  padding: 10px 10px 50px 10px;
+  text-align: center;
+  width: 10%
 }
 
 .search-box{
   display: flex;
+  justify-content: center;
 }
 
 .search-box input{
   font-size: medium;
-  padding: 10px;
+  padding: 10px 300px 10px 10px;
   border: 1px solid;
   border-radius: 10px 0 0 10px;
 }
