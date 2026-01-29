@@ -37,18 +37,22 @@ async function setWeatherLocation(city, geocode){
     console.log(lat)
     console.log(lon)
     
-    const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,relative_humidity_2m,wind_speed_10m');
-    const data = await response.json();
- 
-    const temp = data.current.temperature_2m;
-    const hum = data.current.relative_humidity_2m;
-    const wind = data.current.wind_speed_10m;
+    try{
+        const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,relative_humidity_2m,wind_speed_10m');
+        const data = await response.json();
+     
+        const temp = data.current.temperature_2m;
+        const hum = data.current.relative_humidity_2m;
+        const wind = data.current.wind_speed_10m;
 
-    console.log(temp)
-    
-    document.getElementById('location-text').textContent = name; 
-    document.getElementById('location-description').textContent = loc;
-    document.getElementById('temperature-text').textContent = temp + '˚C'; 
-    document.getElementById('humidity-text').textContent = 'Humidity:\t' + hum + '%'; 
-    document.getElementById('wind-text').textContent = 'Wind:\t' + wind + 'km/h';
+        console.log(temp)
+        
+        document.getElementById('location-text').textContent = name; 
+        document.getElementById('location-description').textContent = loc;
+        document.getElementById('temperature-text').textContent = temp + '˚C'; 
+        document.getElementById('humidity-text').textContent = 'Humidity:\t' + hum + '%'; 
+        document.getElementById('wind-text').textContent = 'Wind:\t' + wind + 'km/h';
+    } catch (err) {
+        alert("Forecast API request failed");
+    }
 }
