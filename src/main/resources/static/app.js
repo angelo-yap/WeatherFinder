@@ -4,12 +4,12 @@ const topTenCities = document.getElementById('top10-cities');
 topTenCities.addEventListener('click', function(event) {
     if (event.target && event.target.classList.contains('city')){
         console.log('You clicked on: ', event.target.textContent);
-        setWeatherLoation(event.target.textContent);
+        setWeatherLoation(event.target.textContent, '');
     }
 })
 
-async function getLocation(city){
-    const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + city + '&count=1&language=enformat=json');
+async function getLocation(city, geocode){
+    const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + city + geocode + '&count=1&language=enformat=json');
     const data = await response.json();
     const result = data.results[0];
     return{
@@ -19,8 +19,8 @@ async function getLocation(city){
     }
 }
 
-async function setWeatherLoation(city){
-    const {name, lat, lon} = await getLocation(city);
+async function setWeatherLoation(city, geocode){
+    const {name, lat, lon} = await getLocation(city, geocode);
     console.log(name)
     console.log(lat)
     console.log(lon)
