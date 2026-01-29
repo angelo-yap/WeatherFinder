@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0">
     <title>Weather Finder</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,30 +15,42 @@
         <div class="weather-zone">
             <div class="container"> 
                 <form class="search-box" id="search-box">
-                    <input type="text" name="location" placeholder="Enter a City..." id="locationinput">
-                    <button type="submit" aria-label="Search">Find City</button>
+                    <input type="text" name="location" placeholder="Enter a City..." id="location-input">
+                    <button id="submit-button">Find City</button>
                 </form>
             </div>
             <div class="weather-display" id="weather-display">
+                <h2 class="location-text" id="location-text">
+                    Vancouver
+                </h2>
+                <h4 class="location-description" id="location-description">
+                    British Columbia
+                </h4>
                 <p class="temperature-text" id="temperature-text">
-                0˚C
+                    ˚C
+                </p>
+                <p class="wind-text" id="wind-text">
+                    Wind: 
+                </p>
+                <p class="humidity-text" id="humidity-text">
+                    Humidity:
                 </p>
             </div>
         </div>
         <div class="sidebar">
             <h4>Top 10 cities</h4>
-            <nav>
-               <a href="">Vancouver</a> <br>
-               <a href="">Toronto</a> <br>
-               <a href="">Beijing</a> <br> 
-               <a href="">Hong Kong</a> <br>  
-               <a href="">Taipei</a> <br> 
-               <a href="">Manila</a> <br> 
-               <a href="">Singapore</a> <br>
-               <a href="">Tokyo</a> <br>
-               <a href="">Los Angeles</a> <br>
-               <a href="">New York</a> 
-            </nav>        
+            <ul id="top10-cities">
+               <li class="city">Manila</li> 
+               <li class="city">Seoul</li> 
+               <li class="city">Hong Kong</li> 
+               <li class="city">Beijing</li> 
+               <li class="city">Tokyo</li> 
+               <li class="city">Dubai</li> 
+               <li class="city">Paris</li>
+               <li class="city">London</li> 
+               <li class="city">Los Angeles</li> 
+               <li class="city">New York</li> 
+            </ul>        
             </div>
         </div>
     </main>
