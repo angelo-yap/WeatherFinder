@@ -1,27 +1,39 @@
 const topTenCities = document.getElementById('top10-cities');
 
+window.onload = setWeatherLocation('Vancouver', '');
 
 topTenCities.addEventListener('click', function(event) {
     if (event.target && event.target.classList.contains('city')){
         console.log('You clicked on: ', event.target.textContent);
-        setWeatherLoation(event.target.textContent, '');
+        setWeatherLocation(event.target.textContent, '');
     }
 })
 
+
 async function getLocation(city, geocode){
-    const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + city + geocode + '&count=1&language=enformat=json');
+    const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + city + '&count=10&language=enformat=json' + geocode);
     const data = await response.json();
-    const result = data.results[0];
-    return{
-        name: result.name || "",
-        lat: result.latitude,
-        lon: result.longitude
+    try{
+        const result = data.results[0];
+        return{
+            name: result.name || "",
+            loc: result.admin1,
+            lat: result.latitude,
+            lon: result.longitude
+        }
+    }catch (err) {
+        alert("Invalid City.")
+        return;
     }
 }
 
-async function setWeatherLoation(city, geocode){
-    const {name, lat, lon} = await getLocation(city, geocode);
+async function setWeatherLocation(city, geocode){
+    const {name, loc, lat, lon} = await getLocation(city, geocode);
+    if (!name || !lat || !lon){
+        return;
+    }
     console.log(name)
+    console.log(loc)
     console.log(lat)
     console.log(lon)
     
@@ -35,6 +47,7 @@ async function setWeatherLoation(city, geocode){
     console.log(temp)
     
     document.getElementById('location-text').textContent = name; 
+    document.getElementById('location-description').textContent = loc;
     document.getElementById('temperature-text').textContent = temp + '˚C'; 
     document.getElementById('humidity-text').textContent = 'Humidity:\t' + hum + '%'; 
     document.getElementById('wind-text').textContent = 'Wind:\t' + wind + 'km/h';
