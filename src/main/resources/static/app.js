@@ -1,3 +1,4 @@
+const button = document.getElementById('submit-button');
 const topTenCities = document.getElementById('top10-cities');
 
 window.onload = setWeatherLocation('Vancouver', '');
@@ -7,6 +8,13 @@ topTenCities.addEventListener('click', function(event) {
         console.log('You clicked on: ', event.target.textContent);
         setWeatherLocation(event.target.textContent, '');
     }
+})
+
+button.addEventListener('click', function (event){
+    event.preventDefault();
+    var city = document.getElementById('location-input').value;
+    console.log(city);
+    setWeatherLocation(city, '&countryCode=CA')
 })
 
 
