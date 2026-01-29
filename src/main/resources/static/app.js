@@ -1,5 +1,7 @@
 const button = document.getElementById('submit-button');
 
+window.onload = setWeatherLocation('Vancouver', '');
+
 button.addEventListener('click', function (event){
     event.preventDefault();
     var city = document.getElementById('location-input').value;
