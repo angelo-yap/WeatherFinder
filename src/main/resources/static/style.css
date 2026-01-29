@@ -23,7 +23,7 @@ main{
 .weather-zone{  
   border: 3px solid rgb(152, 217, 220);
   background-color: rgb(164, 240, 243);      
-  width: 90%;
+  width: 85%;
 }
 
 .container{ 
@@ -41,9 +41,12 @@ main{
   font-size: larger;
   border: 3px solid rgb(152, 217, 220);    
   background-color: rgb(164, 240, 243);      
-  padding: 10px 10px 50px 10px;
+  padding: 10px 20px 50px 10px;
+  width: 15%
+}
+
+.sidebar h4{
   text-align: center;
-  width: 10%
 }
 
 .search-box{

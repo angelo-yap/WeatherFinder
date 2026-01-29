@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0">
     <title>Weather Finder</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,25 +20,34 @@
                 </form>
             </div>
             <div class="weather-display" id="weather-display">
+                <h2 class="location-text" id="location-text">
+                    Vancouver
+                </h2>
                 <p class="temperature-text" id="temperature-text">
-                0˚C
+                    0˚C
+                </p>
+                <p class="wind-text" id="wind-text">
+                    Wind: 
+                </p>
+                <p class="humidity-text" id="humidity-text">
+                    Humidity:
                 </p>
             </div>
         </div>
         <div class="sidebar">
             <h4>Top 10 cities</h4>
-            <nav>
-               <a href="">Vancouver</a> <br>
-               <a href="">Toronto</a> <br>
-               <a href="">Beijing</a> <br> 
-               <a href="">Hong Kong</a> <br>  
-               <a href="">Taipei</a> <br> 
-               <a href="">Manila</a> <br> 
-               <a href="">Singapore</a> <br>
-               <a href="">Tokyo</a> <br>
-               <a href="">Los Angeles</a> <br>
-               <a href="">New York</a> 
-            </nav>        
+            <ul id="top10-cities">
+               <li class="city">Vancouver</li> 
+               <li class="city">Burnaby</li> 
+               <li class="city">Toronto</li> 
+               <li class="city">Ottawa</li> 
+               <li class="city">Montreal</li> 
+               <li class="city">Calgary</li> 
+               <li class="city">Winnipeg</li>
+               <li class="city">Edmonton</li> 
+               <li class="city">Saskatoon</li> 
+               <li class="city">Halifax</li> 
+            </ul>        
             </div>
         </div>
     </main>
