@@ -4,7 +4,6 @@ const spinner = document.getElementById("spinner");
 
 // Shows Vancouver weather when when website is first loaded
 window.onload = setWeather('Vancouver', '');
-// Hides spinner
 
 // EventListener for Top 10 Cities list allowing you to click
 // a city to display the weather & additional information for that city.
@@ -92,7 +91,16 @@ async function setWeather(city, countryCode){
         hideSpinner();
         return;
     }
-    const {temp, hum, wind} = await getWeather(lat, lon);
+    let temp, hum, wind;
+    try{
+        const forecast = await getWeather(lat, lon);
+        temp = forecast.temp;
+        hum = forecast.hum;
+        wind = forecast.wind;
+    }catch (err){
+        alert("getWeather failed: " + err);
+        return;
+    }
     try{
         console.log(temp);
         console.log(hum);
@@ -111,10 +119,11 @@ async function setWeather(city, countryCode){
     hideSpinner();
 }
 
+// Displays spinner
 function displaySpinner(){
     spinner.classList.remove("spinner-hidden");
 }
-
+// Hides spinner
 function hideSpinner(){
     spinner.classList.add("spinner-hidden");
 }
