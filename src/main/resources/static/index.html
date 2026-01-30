@@ -16,14 +16,15 @@
         <div class="weather-zone">
             <div class="container"> 
                 <form class="search-box" id="search-box">
+                    <div class="spinner" class="spinner-hidden" id="spinner"></div>
                     <input type="text" name="location" placeholder="Enter a City..." id="location-input">
-                    <button id="submit-button">Find City</button>
+                    <button id="submit-button">View City</button>
                 </form>
             </div>
             <div class="weather-display" id="weather-display">
-                <h2 class="location-text" id="location-text">
+                <h1 class="location-text" id="location-text">
                     Vancouver
-                </h2>
+                </h1>
                 <h4 class="location-description" id="location-description">
                     British Columbia
                 </h4>
@@ -31,15 +32,15 @@
                     ˚C
                 </p>
                 <p class="wind-text" id="wind-text">
-                    Wind: 
+                    <b>Wind:</b> 
                 </p>
                 <p class="humidity-text" id="humidity-text">
-                    Humidity:
+                    <b>Humidity:</b>
                 </p>
             </div>
         </div>
         <div class="sidebar">
-            <h4>Top 10 cities</h4>
+            <h4>Top 10 Cities</h4>
             <ul id="top10-cities">
                 <li class="city">Manila</li> 
                 <li class="city">Seoul</li> 
@@ -56,7 +57,16 @@
         </div>
     </main>
     <footer>
-        
+        <h2 class="about">
+            About:
+        </h2>
+        <p>
+            To use the weather finder, enter the name of a city in Canada or click one of the "Top 10 Cities" listed on the side bar to the right. If a city outside of Canada is entered in the search bar,
+            there will be an alert notifying there are no results or a similarly named city in Canada will be displayed (e.g. "London", which will display London, Ontario. Differing from the London on the Top 10 Cities list). 
+            The Weather Finder uses a geocoding and forecast API provided by Open-Meteo.
+            <br><br>
+            Creator: Angelo Yap
+        </p>
     </footer>
 </body>
 </html>
