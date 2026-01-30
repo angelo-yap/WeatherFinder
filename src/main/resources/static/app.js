@@ -77,15 +77,21 @@ async function getWeather(lat, lon){
 // @Param countryCode as the country the search is limited to.
 async function setWeather(city, countryCode){
     displaySpinner();
-    const {name, loc, lat, lon} = await getLocation(city, countryCode);
-    if (!name || !lat || !lon){
+    let name, loc, lat, lon;
+    try{
+        const location = await getLocation(city, countryCode);
+        name = location.name;
+        loc = location.loc;
+        lat = location.lat;
+        lon = location.lon;
+        console.log(name)
+        console.log(loc)
+        console.log(lat)
+        console.log(lon)
+    }catch (err){  
+        hideSpinner();
         return;
     }
-    console.log(name)
-    console.log(loc)
-    console.log(lat)
-    console.log(lon)
-
     const {temp, hum, wind} = await getWeather(lat, lon);
     try{
         console.log(temp);
